@@ -1,5 +1,4 @@
--- creates stored procedure that computes and stores average weighted score
--- for all students
+-- creates a stored procedure that computes and stores average weighted scores for all students
 
 DELIMITER $$
 DROP PROCEDURE IF EXISTS ComputeAverageWeightedScoreForUsers;
@@ -9,6 +8,6 @@ BEGIN
     FROM corrections
     INNER JOIN projects
     ON projects.id = corrections.project_id
-    where corrections.user_id = user.id);
+    where corrections.user_id = user_id);
 END $$
-DELIMITER ;
+DELIMITER ; 
